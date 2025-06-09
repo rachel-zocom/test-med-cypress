@@ -1,9 +1,11 @@
 ## Installera Cypress
+```
 npm install cypress --save-dev
-
+```
 ## Kör cypress (för att skapa mapparna)
+```
 npx cypress open
-
+```
 ## Mappstruktur
 Mappen cypress har undermappar för olika ändamål:
 
@@ -14,6 +16,7 @@ Skapa en ny mapp - döp den till e2e:
 e2e – här skapar vi våra testfiler.
 
 ## Skapa en komponent
+```
 import { useState } from "react";
 
 function ClickedButton() {
@@ -28,11 +31,11 @@ function ClickedButton() {
 }
 
 export default ClickedButton;
-
+```
 Vi har en enkel komponent där ett meddelande visas när användaren klickar på en knapp. Det är det vi ska testa med Cypress.
 
 ## Skapa en testfil
-
+```
 cypress/e2e/clickedButton.cy.js
 
 describe("Knappinteraktion", () => {
@@ -42,7 +45,7 @@ describe("Knappinteraktion", () => {
     cy.contains("Du klickade!").should("be.visible");
   });
 });
-
+```
 Vi använder cy.visit() för att ladda appen, 
 cy.get() för att hitta knappen, 
 .click() för att klicka, 
@@ -51,7 +54,9 @@ och cy.contains() för att kolla att meddelandet visas.
 ## Kör testet med Cypress 
 
 1. starta dev-servern med 
+```
 npm run dev
+```
 
 2. Se till att Cypress är igång
 
