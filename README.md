@@ -9,8 +9,8 @@ npx cypress open
 ## Mappstruktur
 Mappen cypress har undermappar för olika ändamål:
 
-fixtures – för testdata (t.ex. json).
-support – för gemensam konfiguration eller kommandon.
+- fixtures – för testdata (t.ex. json).
+- support – för gemensam konfiguration eller kommandon.
 
 Skapa en ny mapp - döp den till e2e:
 e2e – här skapar vi våra testfiler.
