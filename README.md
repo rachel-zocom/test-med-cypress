@@ -35,6 +35,8 @@ export default ClickedButton;
 Vi har en enkel komponent där ett meddelande visas när användaren klickar på en knapp. Det är det vi ska testa med Cypress.
 
 ## Skapa en testfil
+
+Skapa en testfil som döps till clickedButton.cy.js i mappen e2e.
 ```
 cypress/e2e/clickedButton.cy.js
 
@@ -64,3 +66,80 @@ npm run dev
 
 Cypress behöver att vår app är igång, så jag startar Vite med npm run dev.
 Sedan klickar jag på testfilen i Cypress – och där ser vi testet köras i realtid!
+
+## Vanliga Cypress kommandon
+
+Här är en lista med användbara Cypress-kommandon som du kan använda när du skriver dina E2E-tester.
+
+#### 🏁 Start och navigation
+```
+cy.visit('http://localhost:5173')       // Besök en webbsida
+```
+```
+cy.reload()                             // Ladda om sidan
+```
+
+#### 🔍 Hämta element
+```
+cy.get('button')                        // Hitta ett element med CSS-selektor
+```
+```
+cy.get('[data-testid="todo-input"]')   // Hitta element med test-id
+```
+```
+cy.contains('Köp mjölk')               // Hitta element som innehåller text
+```
+
+#### 👆 Interaktion
+```
+cy.get('input').type('Hej')            // Skriv text i ett inputfält
+```
+```
+cy.get('button').click()               // Klicka på ett element
+```
+```
+cy.get('input').clear()                // Töm ett inputfält
+```
+```
+cy.get('select').select('Option')      // Välj ett alternativ i dropdown
+```
+
+#### ✅ Assertions (förväntningar)
+```
+cy.contains('Hej').should('exist')                   // Kontrollera att texten finns
+```
+```
+cy.get('input').should('have.value', 'Hej')          // Kontrollera värde i input
+```
+```
+cy.get('button').should('be.visible')                // Kontrollera att ett element är synligt
+```
+```
+cy.get('.todo').should('have.length', 3)             // Kontrollera antal element
+```
+```
+cy.get('.todo').first().should('contain', 'Kaffe')   // Kontrollera text i första item
+```
+
+#### 🔄 Hooks och struktur
+```
+beforeEach(() => {
+  cy.visit('http://localhost:5173')    // Körs före varje test
+})
+```
+```
+describe('Todo-app', () => {
+  it('ska lägga till en ny todo', () => {
+    // testkod här
+  })
+})
+```
+
+#### 🛠️ Övrigt
+```
+cy.wait(1000)                          // Vänta 1 sekund (undvik om möjligt)
+```
+```
+cy.viewport(375, 667)                 // Sätt fönsterstorlek (exempel: mobil)
+```
+
