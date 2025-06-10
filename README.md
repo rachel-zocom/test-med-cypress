@@ -64,8 +64,8 @@ npm run dev
 
 3. Klicka på clickButton.cy.js i Cypress GUI
 
-Cypress behöver att vår app är igång, så jag startar Vite med npm run dev.
-Sedan klickar jag på testfilen i Cypress – och där ser vi testet köras i realtid!
+Cypress behöver att vår app är igång, så vi startar Vite med npm run dev.
+Sedan klickar vi på testfilen i Cypress – och där ser vi testet köras i realtid!
 
 ## Möjlig konfiguration
 
