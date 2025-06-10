@@ -67,6 +67,25 @@ npm run dev
 Cypress behöver att vår app är igång, så jag startar Vite med npm run dev.
 Sedan klickar jag på testfilen i Cypress – och där ser vi testet köras i realtid!
 
+## Möjlig konfiguration
+
+Om det inte fungerar att köra testet kan ni behöva lägga till en rad i filen cypress.config.js så att det ser ut som detta: 
+
+```
+import { defineConfig } from "cypress";
+
+export default defineConfig({
+  e2e: {
+    specPattern: "cypress/e2e/**/*.cy.{js,ts,jsx,tsx}",
+    setupNodeEvents() {
+      // implement node event listeners here
+    },
+  },
+});
+```
+
+Denna rad (specPattern) gör att cypress hittar testfilerna
+
 ## Vanliga Cypress kommandon
 
 Här är en lista med användbara Cypress-kommandon som du kan använda när du skriver dina E2E-tester.
